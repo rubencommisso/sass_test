@@ -1,0 +1,41 @@
+$noHover: true;
+
+.navbar {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    li {
+        flex: 0;
+            
+        } 
+    
+
+    a {
+        display: block;
+        background-color: white;
+        color: black;
+        text-align: center;
+        padding: 14px;
+        width: 100px;
+        text-decoration: none;
+        font-size: Arial;
+
+        &:hover {
+            color: blue;
+            background-color: aqua;
+        }
+
+        @if $noHover == false {
+            &:hover {
+              background-color: green;
+            }
+          }
+
+    
+    }
+}
