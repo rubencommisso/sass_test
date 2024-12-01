@@ -1,57 +1,54 @@
 $noHover: true;
 
+// Stile per la navbar
 .navbar {
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  li {
+    flex: 0;
+  }
+
+  a {
+    display: block;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 14px;
+    width: 100px;
+    text-decoration: none;
+    font-family: Arial, sans-serif; // Corretto font-family
+
+    @if $noHover == false {
+      &:hover {
+        background-color: green;
+      }
+    } @else {
+      &:hover {
+        color: blue;
+        background-color: aqua;
+      }
     }
-    
-    li {
-        flex: 0;
-            
-        } 
-    
-
-    a {
-        display: block;
-        background-color: white;
-        color: black;
-        text-align: center;
-        padding: 14px;
-        width: 100px;
-        text-decoration: none;
-        font-size: Arial;
-
-        &:hover {
-            color: blue;
-            background-color: aqua;
-        }
-
-        @if $noHover == false {
-            &:hover {
-              background-color: green;
-            }
-          }
-
-    
-    }
-
+  }
 }
 
+// Stile per le classi first e second
 .first {
-    background-color: yellow;
-    padding: 50px;
+  background-color: yellow;
+  padding: 50px;
 }
 
 .second {
-    background-color: greenyellow;
-    padding: 50px;
+  background-color: greenyellow;
+  padding: 50px;
 }
 
-
+// Definisci la lista di colori
 $backgrounds: (lightgray, darkgray);
 
 section {
@@ -63,11 +60,19 @@ section {
   }
 }
 
-section div:nth-of-type(1) {
-    background-color: lightgray;
+// Definisci la lista di colori
+$colors: (
+  magenta: #ff00ff,
+  green: #00ff00,
+  blue: #0000ff,
+  orange: #ffa500
+);
+
+@each $name, $color in $colors {
+  .#{$name} {
+    background-color: $color;
   }
-  
-  section div:nth-of-type(2) {
-    background-color: darkgray;
-  }
+}
+
+
   
