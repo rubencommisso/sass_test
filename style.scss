@@ -38,4 +38,36 @@ $noHover: true;
 
     
     }
+
 }
+
+.first {
+    background-color: yellow;
+    padding: 50px;
+}
+
+.second {
+    background-color: greenyellow;
+    padding: 50px;
+}
+
+
+$backgrounds: (lightgray, darkgray);
+
+section {
+  @for $i from 1 through length($backgrounds) {
+    // Seleziona l'n-esimo div all'interno della section
+    div:nth-of-type(#{$i}) {
+      background-color: nth($backgrounds, $i);
+    }
+  }
+}
+
+section div:nth-of-type(1) {
+    background-color: lightgray;
+  }
+  
+  section div:nth-of-type(2) {
+    background-color: darkgray;
+  }
+  
